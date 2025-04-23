@@ -22,7 +22,11 @@ class Todo {
     _setTodoDate() {
          if(this._data.date) {
             const date = new Date(this._data.date);
-            date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+            this._todoDate.textContent = `Due: ${date.toLocaleString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            })}`;
          }
          else{
             this._todoDate.textContent="";
@@ -43,7 +47,7 @@ class Todo {
         this._setEventListeners();
         return this._todoElement;
     }
-    
   } 
+
 export default Todo;
 
