@@ -5,14 +5,12 @@ export default class TodoCounter{
         this._completed = todos.filter(todo => todo.completed).length;
         this._updateText();
     }
-    updateCompleted(isCompleted) {
-        if (isCompleted) {
-            this._completed += 1;
-        } else {
-            this._completed -= 1;
-        }
+
+    updateCompleted(increment) {
+        this._completed = this._completed + (increment ? 1 : -1);
         this._updateText();
-       }
+    }
+
     updateTotal(increment){
         this._total = this._total + (increment ? 1 : -1);
         this._updateText();
