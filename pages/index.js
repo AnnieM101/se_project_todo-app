@@ -43,12 +43,12 @@ const todoForm = new PopupWithForm({ popupElement: '.popup' }, (formData) => {
 });
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
-  
+todoForm.setEventListeners();  
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
 newTodoValidator.enableValidation();
 
 
-todoForm.setEventListeners();
+
 
 addTodoButton.addEventListener('click', () => {
     todoForm.open();
